@@ -5,12 +5,15 @@ click==8.3.2
 fastapi==0.135.3
 h11==0.16.0
 idna==3.11
+Jinja2==3.1.6
 joblib==1.5.3
+MarkupSafe==3.0.3
 numpy==2.4.4
 pandas==3.0.2
 pydantic==2.13.0
 pydantic_core==2.46.0
 python-dateutil==2.9.0.post0
+python-multipart==0.0.26
 scikit-learn==1.8.0
 scipy==1.17.1
 six==1.17.0
