@@ -1,4 +1,3 @@
-
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
@@ -52,11 +51,14 @@ def predict_form(request: Request,
         "yr_built": house_age,
         "city": city
     }])
-    4
     if model:
         pred = model.predict(df)[0]
         print(pred)
     else:
         pred = 0
 
-    return templates.TemplateResponse("result.html", {"request": request, "prediction": round(float(pred),2)})
+    return templates.TemplateResponse(
+    request=request,
+    name="result.html",
+    context={"prediction": round(float(pred), 2)}
+)
