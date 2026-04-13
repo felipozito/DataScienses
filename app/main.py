@@ -17,12 +17,15 @@ model = None
 
 if os.path.exists(MODEL_PATH):
     model = joblib.load(MODEL_PATH)
-    print(model)
 
 
 @app.get("/", response_class=HTMLResponse)
 def home(request: Request):
-    return templates.TemplateResponse(name = "index.html", context = {"request": request})
+    return templates.TemplateResponse(
+        request=request,
+        name="index.html",
+        context={}
+    )
 
 @app.post("/predict-form", response_class=HTMLResponse)
 def predict_form(request: Request,
